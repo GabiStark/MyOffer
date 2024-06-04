@@ -1,0 +1,79 @@
+.imgGrid{
+
+  height:800px;
+  background-color:grey;
+  align-items: center;
+  display:flex;
+
+}
+
+.imgGrid__back{
+
+  background-color:red;
+
+  width:20%;
+  height:100%;
+
+}
+
+.back__prize{
+
+  background-color:lightcoral;
+  height:20%;
+
+}
+
+.imgGrid__backButton{
+
+  background-color:yellow;
+  width:5%;
+  height:100%;
+
+}
+
+.imgGrid__center{
+
+  width:50%;
+  height:100%;
+
+  background-color:blue;
+
+}
+
+.center__prize{
+
+  background-color:lightblue;
+  height:10%;
+
+}
+
+.center__data{
+
+  background-color:lightcyan;
+  height:20%;
+
+}
+
+.imgGrid__nextButton{
+
+  background-color:black;
+  width:5%;
+  height:100%;
+
+}
+
+.imgGrid__next{
+
+  background-color:green;
+
+  width:20%;
+  height:100%;
+
+}
+
+.next__prize{
+
+  background-color:lightgreen;
+  height:20%;
+
+}

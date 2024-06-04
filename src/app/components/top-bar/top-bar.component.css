@@ -1,0 +1,59 @@
+.title{
+
+  text-align:center;
+
+  h1{
+
+    font-weight: bolder;
+    cursor:pointer;
+
+  }
+
+}
+
+.topBar{
+
+  background-color:lightblue;
+  height:50px;
+  display:flex;
+  justify-content: space-between;
+  padding-left:15px;
+  padding-right:15px;
+  margin-bottom:20px;
+  border-radius:5px;
+
+}
+
+.logo{
+
+  display:flex;
+
+  p {
+
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    margin-left: 15px;
+    cursor: pointer;
+
+  }
+
+}
+
+.boton {
+
+  display:flex;
+
+  p {
+
+    margin-right: 15px;
+
+  }
+
+}
+
+.topBar input{
+
+  border-radius:5px;
+
+}
