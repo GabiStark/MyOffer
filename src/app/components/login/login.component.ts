@@ -1,0 +1,91 @@
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-login',
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
+})
+export class LoginComponent implements OnInit {
+  showingRegisterForm: Boolean = false
+
+  @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
+  @Output() closeForm: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+  ){}
+
+  ngOnInit(): void {
+    this.formularioLogin = this.formBuilder.group({
+      usuario: ["", [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10)
+      ]],
+      contraseña: ["", [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(14)
+      ]]
+    })
+
+    this.formularioRegistro = this.formBuilder.group({
+      usuario: ["", [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10)
+      ]],
+      contraseña: ["", [
+        Validators.required,
+        Validators.minLength(7),
+        Validators.maxLength(14)
+      ]],
+      confirmarContraseña: ["",
+        [
+          Validators.required,
+          Validators.minLength(7),
+          Validators.maxLength(14)
+        ]
+      ]
+    })
+  }
+
+  formularioLogin:FormGroup = new FormGroup({
+    usuario: new FormControl(""),
+    contraseña: new FormControl("")
+  })
+
+  formularioRegistro:FormGroup = new FormGroup({
+    usuario: new FormControl(""),
+    contraseña: new FormControl(""),
+    confirmarContraseña: new FormControl("")
+  })
+
+  logIn(){
+
+
+
+  }
+
+  registro(){
+
+
+
+  }
+
+  toggleForm(){
+    this.showingRegisterForm = !this.showingRegisterForm
+  }
+
+  cerrarForm(){
+    this.closeForm.emit();
+  }
+}
