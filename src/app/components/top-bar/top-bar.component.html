@@ -19,7 +19,14 @@
     </p>
   </div>
 
-  @if(showLogin){
-    <logIn (usuarioLogueado)="cambiarFormulario(true)" (cerrarFormulario)="cambiarFormulario()"></logIn>
+  @if(showLogin==1){
+
+    <app-login/>
+
+  }@else if(showLogin==2){
+
+    <app-singin/>
+
+  }
 
 </div>

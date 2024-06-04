@@ -36,26 +36,6 @@ export class LoginComponent implements OnInit {
         Validators.maxLength(14)
       ]]
     })
-
-    this.formularioRegistro = this.formBuilder.group({
-      usuario: ["", [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(10)
-      ]],
-      contraseña: ["", [
-        Validators.required,
-        Validators.minLength(7),
-        Validators.maxLength(14)
-      ]],
-      confirmarContraseña: ["",
-        [
-          Validators.required,
-          Validators.minLength(7),
-          Validators.maxLength(14)
-        ]
-      ]
-    })
   }
 
   formularioLogin:FormGroup = new FormGroup({
@@ -63,13 +43,7 @@ export class LoginComponent implements OnInit {
     contraseña: new FormControl("")
   })
 
-  formularioRegistro:FormGroup = new FormGroup({
-    usuario: new FormControl(""),
-    contraseña: new FormControl(""),
-    confirmarContraseña: new FormControl("")
-  })
-
-  logIn(){
+  login(){
 
 
 

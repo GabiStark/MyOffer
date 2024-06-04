@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
+import {SinginComponent} from "../singin/singin.component";
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
   imports: [
     RouterLink,
-    LoginComponent
+    LoginComponent,
+    SinginComponent,
   ],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
 
-  showLogin:boolean = false;
+  showLogin:number = 0;
   buttonText:string = "Iniciar sesión";
 
   logIn(){
@@ -23,16 +25,13 @@ export class TopBarComponent {
 
   }
 
-  cambiarFormulario(sehaLogueado:boolean = false){
+  cambiarFormulario(){
     this.buttonText = "Iniciar sesión"
 
-    this.formularioAbierto = !this.formularioAbierto
+    this.showLogin ++;
 
-    if(sehaLogueado){
-      this.buttonText = "Cerrar sesión "
-    }else{
-      this.service.closeSesion()
-    }
+
+
   }
 
 }
