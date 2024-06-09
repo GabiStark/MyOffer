@@ -21,11 +21,12 @@ export class TopBarComponent {
 
   logIn(){
 
-
+  this.showLogin++;
 
   }
 
   cambiarFormulario(){
+
     this.buttonText = "Iniciar sesión"
 
     this.showLogin ++;

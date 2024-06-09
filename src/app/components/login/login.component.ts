@@ -13,10 +13,10 @@ import {Router} from "@angular/router";
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-  showingRegisterForm: Boolean = false
+
+  showLogin:number=0;
 
   @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
-  @Output() closeForm: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private router: Router,
@@ -56,10 +56,10 @@ export class LoginComponent implements OnInit {
   }
 
   toggleForm(){
-    this.showingRegisterForm = !this.showingRegisterForm
+    this.showLogin++;
   }
 
   cerrarForm(){
-    this.closeForm.emit();
+    this.showLogin==0;
   }
 }
