@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
 import {SinginComponent} from "../singin/singin.component";
+import {MatIcon} from "@angular/material/icon";
+import {MatButton, MatFabButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-top-bar',
@@ -10,6 +12,9 @@ import {SinginComponent} from "../singin/singin.component";
     RouterLink,
     LoginComponent,
     SinginComponent,
+    MatIcon,
+    MatFabButton,
+    MatButton,
   ],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
