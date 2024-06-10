@@ -14,14 +14,15 @@
     <p>
       <input type="search" placeholder=" Introduzca el juego">
     </p>
-        <button mat-raised-button color="primary" (click)="logIn()">Primary</button>
+    <button mat-raised-button color="primary" (click)="logIn()">Iniciar Sesión</button>
+    <button mat-raised-button color="primary" (click)="singIn()">Crear Usuario</button>
   </div>
 
-  @if(showLogin==1){
+  @if((showLogin)==1){
 
     <app-login/>
 
-  }@else if(showLogin==2){
+  }@else if((showLogin)==2){
 
     <app-singin/>
 
