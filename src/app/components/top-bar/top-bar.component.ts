@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
 import {SinginComponent} from "../singin/singin.component";
@@ -26,21 +26,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class TopBarComponent {
 
-  showLogin:number = 0;
-  buttonText:string = "Iniciar sesión";
-  usuario:boolean = false;
+  showLogin: number = 0;
+
 
   logIn(){
 
-  this.showLogin++;
+  this.showLogin=1;
+  alert(this.showLogin)
 
+  }
+
+  singIn(){
+    this.showLogin=2;
+    alert(this.showLogin)
   }
 
   cambiarFormulario(){
 
-    this.buttonText = "Iniciar sesión"
-
-    this.showLogin ++;
+    this.showLogin==0;
 
 
 
