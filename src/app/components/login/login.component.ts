@@ -14,9 +14,10 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  showLogin:number=0;
+
 
   @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
+  @Output() showLogin: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private router: Router,
@@ -56,10 +57,10 @@ export class LoginComponent implements OnInit {
   }
 
   toggleForm(){
-    this.showLogin++;
+    this.showLogin.emit
   }
 
   cerrarForm(){
-    this.showLogin==0;
+    this.showLogin.emit;
   }
 }

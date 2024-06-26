@@ -11,10 +11,22 @@
     <p routerLink="">Mis juegos</p>
   </div>
   <div class="boton">
-    <p>
-      <input type="search" placeholder=" Introduzca el juego">
-    </p>
-        <button mat-raised-button color="primary" (click)="logIn()">Primary</button>
+    <mat-form-field>
+      <mat-label>Juego</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="userBox">
+      <mat-label>Usuario</mat-label>
+      <mat-select>
+        @if(usuario){
+          <mat-option value="one">Modificar Usuario</mat-option>
+          <mat-option value="two">Cerrar Sesión</mat-option>
+        }@else{
+          <mat-option value="one">Iniciar Sesión</mat-option>
+          <mat-option value="two">Crear Usuario</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
   </div>
 
   @if(showLogin==1){

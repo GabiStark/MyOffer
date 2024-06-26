@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
 import {SinginComponent} from "../singin/singin.component";
-import {MatIcon} from "@angular/material/icon";
-import {MatButton, MatFabButton} from "@angular/material/button";
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-top-bar',
@@ -12,9 +15,11 @@ import {MatButton, MatFabButton} from "@angular/material/button";
     RouterLink,
     LoginComponent,
     SinginComponent,
-    MatIcon,
-    MatFabButton,
-    MatButton,
+    MatButtonModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
@@ -23,6 +28,7 @@ export class TopBarComponent {
 
   showLogin:number = 0;
   buttonText:string = "Iniciar sesión";
+  usuario:boolean = false;
 
   logIn(){
 

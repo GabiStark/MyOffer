@@ -25,9 +25,12 @@
 
 .imgGrid__backButton{
 
-  background-color:yellow;
   width:5%;
   height:100%;
+  display:flex;
+  justify-content: right;
+  align-items: center;
+
 
 }
 
@@ -56,9 +59,23 @@
 
 .imgGrid__nextButton{
 
-  background-color:black;
   width:5%;
   height:100%;
+  display:flex;
+  justify-content: left;
+  align-items: center;
+
+}
+
+.material-symbols-outlined{
+
+  cursor:pointer;
+
+}
+
+.material-symbols-sharp{
+
+  cursor:pointer;
 
 }
 
