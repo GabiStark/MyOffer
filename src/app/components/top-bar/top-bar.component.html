@@ -12,21 +12,20 @@
   </div>
   <div class="boton">
     <mat-form-field>
-      <mat-label>Juego</mat-label>
+      <mat-label>Busque su juego</mat-label>
       <input matInput>
     </mat-form-field>
-    <mat-form-field class="userBox">
-      <mat-label>Usuario</mat-label>
-      <mat-select>
-        @if(usuario){
-          <mat-option value="one">Modificar Usuario</mat-option>
-          <mat-option value="two">Cerrar Sesión</mat-option>
-        }@else{
-          <mat-option value="one">Iniciar Sesión</mat-option>
-          <mat-option value="two">Crear Usuario</mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
+
+    <button mat-button [matMenuTriggerFor]="user" class="userBox">{{ User }}</button>
+    <mat-menu #user="matMenu">
+      @if(usuario){
+        <button mat-menu-item>Modificar Usuario</button>
+        <button mat-menu-item>Cerrar Sesión</button>
+      }@else{
+        <button mat-menu-item>Iniciar Sesión</button>
+        <button mat-menu-item>Crear Usuario</button>
+      }
+    </mat-menu>
   </div>
 
   @if((showLogin)==1){

@@ -28,6 +28,7 @@ export class TopBarComponent {
 
   showLogin: number = 0;
   usuario:boolean = false;
+  User:string = "Iniciar Sesión"
 
 
   logIn(){
