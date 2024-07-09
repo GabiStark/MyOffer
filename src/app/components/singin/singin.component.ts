@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
@@ -14,6 +14,8 @@ import {Router} from "@angular/router";
 })
 export class SinginComponent implements OnInit {
 
+  @Output() changeForm: EventEmitter<number> = new EventEmitter<number>();
+  @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
   constructor(
     private formBuilder: FormBuilder,
   ){}
@@ -52,12 +54,12 @@ export class SinginComponent implements OnInit {
 
   }
 
-  toggleForm() {
-
+  toggleForm(){
+    this.changeForm.emit(2);
   }
 
-  cerrarForm() {
-
+  cerrarForm(){
+    this.changeForm.emit(0);
   }
 
 }

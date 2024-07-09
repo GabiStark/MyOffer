@@ -1,8 +1,10 @@
-.fondo{
+.back{
   position: absolute;
+  top:.30px;
+  left:0px;
   background-color: rgba(0, 0, 0, 0.413);
   width: 100%;
-  height: 100%;
+  height: 106%;
   margin-top: -50px;
   display: flex;
   justify-content: center;
@@ -36,6 +38,7 @@ form > input{
   text-align: center;
   font-size: small;
   color: lightseagreen;
+  margin-top:5px;
 }
 
 .iconoDeCierre{

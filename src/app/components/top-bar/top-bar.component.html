@@ -22,8 +22,8 @@
         <button mat-menu-item>Modificar Usuario</button>
         <button mat-menu-item>Cerrar Sesión</button>
       }@else{
-        <button mat-menu-item>Iniciar Sesión</button>
-        <button mat-menu-item>Crear Usuario</button>
+        <button mat-menu-item (click)="logIn()">Iniciar Sesión</button>
+        <button mat-menu-item (click)="singIn()">Crear Usuario</button>
       }
     </mat-menu>
   </div>

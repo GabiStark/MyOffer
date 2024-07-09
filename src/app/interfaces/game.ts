@@ -1,7 +1,9 @@
 export interface Game {
 
   name: string,
+  id: number,
   img?: string,
-  id: string
+  prize?: number,
+  prizeUser?: number
 
 }

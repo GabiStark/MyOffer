@@ -1,17 +1,20 @@
-<!-- Formulario de registro -->
-<form (submit)="registro()" [formGroup]="formularioRegistro">
-  <div class="iconoDeCierre"  (click)="cerrarForm()">
-                <span class="material-symbols-sharp">
-                    close
-                </span>
-  </div>
-  <input type="text" placeholder="Usuario" formControlName="usuario">
-  <div>
-    <input type="password" placeholder="Contraseña" formControlName="contraseña">
-  </div>
-  <div>
-    <input type="password" placeholder="Confirmar contraseña" formControlName="confirmarContraseña">
-  </div>
-  <button [disabled]="formularioRegistro.invalid">Registrarse</button>
-  <p class="registerText" (click)="toggleForm()">¿Ya tienes una cuenta? Inicia sesion</p>
-</form>
+<div class="back">
+  <!-- Formulario de registro -->
+  <form (submit)="registro()" [formGroup]="formularioRegistro">
+    <div class="iconoDeCierre"  (click)="cerrarForm()">
+                  <span class="material-symbols-outlined">
+                      close
+                  </span>
+    </div>
+    <h3>Crear Usuario</h3>
+    <input type="text" placeholder="Usuario" formControlName="usuario">
+    <div>
+      <input type="password" placeholder="Contraseña" formControlName="contraseña">
+    </div>
+    <div>
+      <input type="password" placeholder="Confirmar contraseña" formControlName="confirmarContraseña">
+    </div>
+    <button [disabled]="formularioRegistro.invalid">Registrarse</button>
+    <p class="registerText" (click)="toggleForm()">¿Ya tienes una cuenta? Inicia sesion</p>
+  </form>
+</div>

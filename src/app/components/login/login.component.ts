@@ -45,21 +45,15 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-
-
-  }
-
-  registro(){
-
-
-
   }
 
   toggleForm(){
-    this.changeForm.emit(this.showLogin=2);
+    this.changeForm.emit(2);
   }
 
-  cerrarForm(){
-    this.changeForm.emit(this.showLogin=0);
+  closeForm(){
+    this.changeForm.emit(0);
+    //TODO hacer que los formullarios se cierren y se cambien, aprender bien el emit si es posible que cambie la variable del padre
   }
+
 }

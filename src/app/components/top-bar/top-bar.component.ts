@@ -34,20 +34,16 @@ export class TopBarComponent {
   logIn(){
 
   this.showLogin=1;
-  alert(this.showLogin)
 
   }
 
   singIn(){
     this.showLogin=2;
-    alert(this.showLogin)
   }
 
-  cambiarFormulario(){
+  closeForms(){
 
-    this.showLogin==0;
-
-
+    this.showLogin=0;
 
   }
 
