@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AppLogicService} from "../../services/app-logic.service";
 
 @Component({
   selector: 'app-singin',
@@ -14,10 +15,10 @@ import {Router} from "@angular/router";
 })
 export class SinginComponent implements OnInit {
 
-  @Output() changeForm: EventEmitter<number> = new EventEmitter<number>();
   @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
   constructor(
     private formBuilder: FormBuilder,
+    private servieLogic: AppLogicService
   ){}
 
   ngOnInit(): void {
@@ -54,12 +55,12 @@ export class SinginComponent implements OnInit {
 
   }
 
-  toggleForm(){
-    this.changeForm.emit(2);
+  changeForm(){
+    this.servieLogic.formsState=1;
   }
 
   cerrarForm(){
-    this.changeForm.emit(0);
+    this.servieLogic.formsState=0;
   }
 
 }

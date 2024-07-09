@@ -28,11 +28,11 @@
     </mat-menu>
   </div>
 
-  @if((showLogin)==1){
+  @if((this.serviceLogic.formsState)==1){
 
     <app-login/>
 
-  }@else if((showLogin)==2){
+  }@else if((this.serviceLogic.formsState)==2){
 
     <app-singin/>
 

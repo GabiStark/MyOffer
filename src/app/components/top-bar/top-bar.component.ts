@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {AppLogicService} from "../../services/app-logic.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -26,25 +27,23 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class TopBarComponent {
 
-  showLogin: number = 0;
+  constructor(
+
+    protected serviceLogic: AppLogicService,
+
+  ){}
+
   usuario:boolean = false;
   User:string = "Iniciar Sesión"
 
-
   logIn(){
 
-  this.showLogin=1;
+  this.serviceLogic.formsState=1;
 
   }
 
   singIn(){
-    this.showLogin=2;
-  }
-
-  closeForms(){
-
-    this.showLogin=0;
-
+    this.serviceLogic.formsState=2;
   }
 
 }

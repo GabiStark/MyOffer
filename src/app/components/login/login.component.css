@@ -39,6 +39,7 @@ form > input{
   font-size: small;
   color: lightseagreen;
   margin-top:5px;
+  cursor:pointer;
 }
 
 .iconoDeCierre{

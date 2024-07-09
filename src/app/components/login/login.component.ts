@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AppLogicService} from "../../services/app-logic.service";
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,12 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  @Output() changeForm: EventEmitter<number> = new EventEmitter<number>();
   @Output() userLoged: EventEmitter<void> = new EventEmitter<void>();
-  private showLogin: number=0;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
+    private serviceLogic: AppLogicService
   ){}
 
   ngOnInit(): void {
@@ -47,13 +47,12 @@ export class LoginComponent implements OnInit {
 
   }
 
-  toggleForm(){
-    this.changeForm.emit(2);
+  changeForm(){
+    this.serviceLogic.formsState=2;
   }
 
   closeForm(){
-    this.changeForm.emit(0);
-    //TODO hacer que los formullarios se cierren y se cambien, aprender bien el emit si es posible que cambie la variable del padre
+    this.serviceLogic.formsState=0;
   }
 
 }

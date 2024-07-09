@@ -34,11 +34,12 @@ form > input{
   margin-top: 0;
 }
 
-.registerText{
+.changeText{
   text-align: center;
   font-size: small;
   color: lightseagreen;
   margin-top:5px;
+  cursor:pointer;
 }
 
 .iconoDeCierre{
