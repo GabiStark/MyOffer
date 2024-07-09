@@ -28,13 +28,13 @@
     </mat-menu>
   </div>
 
-  @if((showLogin)==1){
+  @if((servicioLogic.formState)==1){
 
-    <app-login/>
+    <app-login (changeForm)="closeForms()"/>
 
-  }@else if((showLogin)==2){
+  }@else if((servicioLogic.formState)==2){
 
-    <app-singin/>
+    <app-singin (changeForm)="closeForms()"/>
 
   }
 
