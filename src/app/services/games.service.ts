@@ -8,13 +8,15 @@ export class GamesService {
 
   gameId: number = 1293830;
 
+
   constructor(
+
     private api: HttpClient
 
   ) {
 
 
-    this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(this.gameId)}`)
+
 
     //Para transformar de nombre a ID
     //GET http://api.steampowered.com/ISteamApps/GetAppList/v2
@@ -23,7 +25,16 @@ export class GamesService {
 
   }
 
-  searchGame(){
+   call(num:number){
+
+     this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(this.gameId)}`)
+       .subscribe(respuesta => {console.log(respuesta)})
+
+     return this.api.get<string>(`https://store.steampowered.com/api/appdetails?appids=${(num)}`)
+
+   }
+
+  pintar(){
 
 
 
