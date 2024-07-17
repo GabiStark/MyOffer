@@ -16,7 +16,7 @@ export class GridPrincipalComponent {
   constructor(
 
     private api: HttpClient,
-//private jueguicos: GamesService = new GamesService(api)
+    private jueguicos: GamesService = new GamesService(api)
 
   ) {
   }
@@ -29,8 +29,7 @@ export class GridPrincipalComponent {
 
     let a:number = 1293830;
 
-  this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(a)}`)
-    .subscribe(respuesta => {console.log(respuesta)})
+  this.jueguicos.call(a);
 
   }
 

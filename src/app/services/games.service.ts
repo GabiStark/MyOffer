@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,9 @@ export class GamesService {
 
   constructor(
 
-    private api: HttpClient
+    private api: HttpClient,
 
   ) {
-
 
 
 
@@ -27,11 +26,20 @@ export class GamesService {
 
    call(num:number){
 
-     this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(this.gameId)}`)
+     const autorization: HttpHeaders = new HttpHeaders({
+       "Authorization": "Basic user:user"
+     })
+
+       this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(num)}`, {
+         headers:autorization
+       })
+         .subscribe(respuesta => {console.log(respuesta)})
+
+   /*  this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(this.gameId)}`)
        .subscribe(respuesta => {console.log(respuesta)})
 
      return this.api.get<string>(`https://store.steampowered.com/api/appdetails?appids=${(num)}`)
-
+  */
    }
 
   pintar(){
