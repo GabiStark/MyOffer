@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
+const autorization: HttpHeaders = new HttpHeaders({
+  "Authorization": "Basic user:user"
+})
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,10 +29,6 @@ export class GamesService {
   }
 
    call(num:number){
-
-     const autorization: HttpHeaders = new HttpHeaders({
-       "Authorization": "Basic user:user"
-     })
 
        this.api.get(`https://store.steampowered.com/api/appdetails?appids=${(num)}`, {
          headers:autorization
