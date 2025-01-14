@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 const autorization: HttpHeaders = new HttpHeaders({
-  "Authorization": "Basic user:user"
+  "Authorization": "Basic"
 })
 
 @Injectable({
