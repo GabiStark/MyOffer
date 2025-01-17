@@ -59,7 +59,6 @@ export class SinginComponent implements OnInit {
     this.servieLogic.formsState=1;
   }
 
-  cerrarForm(){
     this.servieLogic.formsState=0;
   }
 
